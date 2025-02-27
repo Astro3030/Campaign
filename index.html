@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wild West D&D World</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Legends of the Frontier</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#story">Story</a>
+            <a href="#characters">Characters</a>
+            <a href="#world">World</a>
+            <a href="#dice">Dice Roller</a>
+        </nav>
+    </header>
+    
+    <section id="home">
+        <h2>Welcome to the Wild West</h2>
+        <p>A land of outlaws, lawmen, and untamed frontiers. Your posse must navigate dangerous towns, desert mysteries, and a rising threat from the dark forces lurking beyond the horizon.</p>
+    </section>
+    
+    <section id="story">
+        <h2>The Adventure So Far</h2>
+        <p>Session 1: The posse arrived in Dustveil, a town on the brink of war between the Sheriff and the Black Vulture Gang.</p>
+        <p>Session 2: A haunted gold mine revealed a cursed treasure and restless spirits.</p>
+    </section>
+    
+    <section id="characters">
+        <h2>Meet the Posse</h2>
+        <ul>
+            <li><strong>Jebediah "Two-Gun" Carter</strong> - Gunslinger with a vendetta</li>
+            <li><strong>Eliza "Whisper" McGraw</strong> - Outlaw turned reluctant hero</li>
+            <li><strong>Father Ezekiel</strong> - Preacher with a dark secret</li>
+        </ul>
+    </section>
+    
+    <section id="world">
+        <h2>The Wild West</h2>
+        <p><strong>Dustveil:</strong> A frontier town caught between law and chaos.</p>
+        <p><strong>The Whispering Canyon:</strong> Legends say the canyon speaks to those who enter.</p>
+    </section>
+    
+    <section id="dice">
+        <h2>Dice Roller</h2>
+        <label for="dice">Choose a die:</label>
+        <select id="dice">
+            <option value="4">D4</option>
+            <option value="6">D6</option>
+            <option value="8">D8</option>
+            <option value="10">D10</option>
+            <option value="12">D12</option>
+            <option value="20">D20</option>
+        </select>
+        <button onclick="rollDice()">Roll</button>
+        <p id="result"></p>
+    </section>
+</body>
+</html>
+
+<!-- styles.css -->
+<style>
+    body { font-family: Arial, sans-serif; background-color: #1e1e1e; color: white; text-align: center; margin: 0; }
+    header { background-color: #333; padding: 10px; }
+    nav a { color: white; margin: 0 15px; text-decoration: none; }
+    section { padding: 20px; border-bottom: 1px solid #555; }
+    button { padding: 10px; font-size: 16px; cursor: pointer; }
+</style>
+
+<!-- script.js -->
+<script>
+    function rollDice() {
+        const dice = document.getElementById("dice").value;
+        const result = Math.floor(Math.random() * dice) + 1;
+        document.getElementById("result").textContent = `You rolled: ${result}`;
+    }
+</script>
