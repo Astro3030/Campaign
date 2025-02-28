@@ -17,6 +17,11 @@
             <a href="#world">World</a>
             <a href="#factions">Factions</a>
             <a href="#mechanics">Mechanics</a>
+            <a href="#quests">Quests</a>
+            <a href="#items">Magic Items</a>
+            <a href="#statblocks">Stat Blocks</a>
+            <a href="#chapters">Chapters</a>
+            <a href="#openworld">Open World</a>
             <a href="#dice">Dice Roller</a>
         </nav>
     </header>
@@ -33,11 +38,13 @@
     </section>
     
     <section id="characters">
-        <h2>Character Creation</h2>
-        <p>Players may choose from a variety of races and classes, each with unique backgrounds tied to the world of Eldoria.</p>
+        <h2>Major Characters</h2>
         <ul>
-            <li><strong>Playable Races:</strong> Humans, Elves, Dwarves, Tieflings, Dragonborn, and more.</li>
-            <li><strong>Recommended Classes:</strong> Arcane Scholar, Eldorian Knight, Shadowblade, Mystic Healer.</li>
+            <li><strong>King Alden Valorcrest:</strong> The ruler of Valeria, desperate to maintain order as the world crumbles.</li>
+            <li><strong>High Mage Seraphina:</strong> A powerful wizard seeking to recover the lost magic of the ancients.</li>
+            <li><strong>Lord Veymar Blackthorn:</strong> A warlord and leader of the Iron Legion, determined to conquer Eldoria.</li>
+            <li><strong>The Whisper:</strong> An enigmatic rogue who operates in the shadows, controlling information.</li>
+            <li><strong>The Awakened One:</strong> A mysterious entity believed to be tied to the return of an ancient evil.</li>
         </ul>
     </section>
     
@@ -50,7 +57,6 @@
     
     <section id="factions">
         <h2>Factions</h2>
-        <p>The world is controlled by various factions, each with their own agenda.</p>
         <ul>
             <li><strong>The Radiant Order:</strong> A noble faction seeking to restore balance through law and magic.</li>
             <li><strong>The Shadowborn:</strong> A secretive cult obsessed with unlocking forbidden knowledge.</li>
@@ -60,12 +66,44 @@
     
     <section id="mechanics">
         <h2>Campaign Mechanics</h2>
-        <p>Echoes of Eldoria introduces unique gameplay elements:</p>
         <ul>
             <li><strong>Faction Reputation System:</strong> Player actions influence relationships with major factions.</li>
             <li><strong>Ancient Magic:</strong> Unlock hidden spells and artifacts lost to time.</li>
             <li><strong>Exploration Challenges:</strong> Dynamic encounters based on the environment.</li>
         </ul>
+    </section>
+    
+    <section id="quests">
+        <h2>Quests</h2>
+        <ul>
+            <li><strong>The Prophecy of Eldoria:</strong> A long-lost prophecy hints at the return of an ancient being of destruction.</li>
+            <li><strong>Lost Tomes of Arcana:</strong> A wizard’s library holds the secret to unlocking powerful forgotten spells.</li>
+            <li><strong>The Iron War:</strong> The Iron Legion prepares for conquest, and the players must decide where their allegiances lie.</li>
+        </ul>
+    </section>
+    
+    <section id="items">
+        <h2>Legendary Magic Items</h2>
+        <ul>
+            <li><strong>Blade of the Fallen Star:</strong> A sword forged from a meteor, glowing with celestial energy.</li>
+            <li><strong>Amulet of Eldoria:</strong> A mystical pendant said to hold the power of the first wizards.</li>
+            <li><strong>Staff of the Voidwalker:</strong> Grants its wielder the ability to step between dimensions.</li>
+        </ul>
+    </section>
+    
+    <section id="statblocks">
+        <h2>Stat Blocks</h2>
+        <p>Comprehensive stat blocks for major enemies, NPCs, and creatures encountered in the campaign.</p>
+    </section>
+    
+    <section id="chapters">
+        <h2>Campaign Chapters</h2>
+        <p>Structured storyline broken into chapters, detailing major events, battles, and decision points.</p>
+    </section>
+    
+    <section id="openworld">
+        <h2>Open World Exploration</h2>
+        <p>Dynamic encounters, secrets, and a living world shaped by player choices.</p>
     </section>
     
     <section id="dice">
@@ -84,21 +122,3 @@
     </section>
 </body>
 </html>
-
-<!-- styles.css -->
-<style>
-    body { font-family: Arial, sans-serif; background-color: #1e1e1e; color: white; text-align: center; margin: 0; }
-    header { background-color: #333; padding: 10px; }
-    nav a { color: white; margin: 0 15px; text-decoration: none; }
-    section { padding: 20px; border-bottom: 1px solid #555; }
-    button { padding: 10px; font-size: 16px; cursor: pointer; }
-</style>
-
-<!-- script.js -->
-<script>
-    function rollDice() {
-        const dice = document.getElementById("dice").value;
-        const result = Math.floor(Math.random() * dice) + 1;
-        document.getElementById("result").textContent = `You rolled: ${result}`;
-    }
-</script>
