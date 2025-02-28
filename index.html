@@ -11,64 +11,42 @@
     <header>
         <h1>Echoes of Eldoria</h1>
         <nav>
-            <a href="#home">Home</a>
-            <a href="#introduction">Introduction</a>
-            <a href="#characters">Characters</a>
-            <a href="#world">World</a>
-            <a href="#factions">Factions</a>
-            <a href="#mechanics">Mechanics</a>
-            <a href="#dice">Dice Roller</a>
+            <button class="toggle" data-target="introduction">Introduction</button>
+            <button class="toggle" data-target="characters">Characters</button>
+            <button class="toggle" data-target="world">World</button>
+            <button class="toggle" data-target="factions">Factions</button>
+            <button class="toggle" data-target="mechanics">Mechanics</button>
+            <button class="toggle" data-target="dice">Dice Roller</button>
         </nav>
     </header>
     
-    <section id="home">
-        <h2>Welcome to Echoes of Eldoria</h2>
-        <p>A realm once thriving under ancient magic, now teeters on the brink of collapse. The balance of power is shifting, and your party holds the key to its fate.</p>
-    </section>
-    
-    <section id="introduction">
+    <section id="introduction" class="content hidden">
         <h2>Introduction</h2>
         <p>Echoes of Eldoria is a high-fantasy campaign where players embark on an epic journey across a world torn between powerful factions, lost magics, and the return of an ancient evil.</p>
-        <p>This campaign includes deep lore, dynamic NPC interactions, and unique world mechanics to enhance storytelling.</p>
     </section>
     
-    <section id="characters">
+    <section id="characters" class="content hidden">
         <h2>Character Creation</h2>
         <p>Players may choose from a variety of races and classes, each with unique backgrounds tied to the world of Eldoria.</p>
-        <ul>
-            <li><strong>Playable Races:</strong> Humans, Elves, Dwarves, Tieflings, Dragonborn, and more.</li>
-            <li><strong>Recommended Classes:</strong> Arcane Scholar, Eldorian Knight, Shadowblade, Mystic Healer.</li>
-        </ul>
     </section>
     
-    <section id="world">
+    <section id="world" class="content hidden">
         <h2>The World of Eldoria</h2>
         <p><strong>Valeria:</strong> The capital city, seat of power and intrigue.</p>
         <p><strong>The Shattered Isles:</strong> Ruins of an ancient civilization, home to forgotten magic.</p>
-        <p><strong>The Ashen Wastes:</strong> A cursed wasteland where nightmares walk.</p>
     </section>
     
-    <section id="factions">
+    <section id="factions" class="content hidden">
         <h2>Factions</h2>
         <p>The world is controlled by various factions, each with their own agenda.</p>
-        <ul>
-            <li><strong>The Radiant Order:</strong> A noble faction seeking to restore balance through law and magic.</li>
-            <li><strong>The Shadowborn:</strong> A secretive cult obsessed with unlocking forbidden knowledge.</li>
-            <li><strong>The Iron Legion:</strong> A militaristic force bent on conquest and order.</li>
-        </ul>
     </section>
     
-    <section id="mechanics">
+    <section id="mechanics" class="content hidden">
         <h2>Campaign Mechanics</h2>
         <p>Echoes of Eldoria introduces unique gameplay elements:</p>
-        <ul>
-            <li><strong>Faction Reputation System:</strong> Player actions influence relationships with major factions.</li>
-            <li><strong>Ancient Magic:</strong> Unlock hidden spells and artifacts lost to time.</li>
-            <li><strong>Exploration Challenges:</strong> Dynamic encounters based on the environment.</li>
-        </ul>
     </section>
     
-    <section id="dice">
+    <section id="dice" class="content hidden">
         <h2>Dice Roller</h2>
         <label for="dice">Choose a die:</label>
         <select id="dice">
@@ -87,15 +65,53 @@
 
 <!-- styles.css -->
 <style>
-    body { font-family: Arial, sans-serif; background-color: #1e1e1e; color: white; text-align: center; margin: 0; }
-    header { background-color: #333; padding: 10px; }
-    nav a { color: white; margin: 0 15px; text-decoration: none; }
-    section { padding: 20px; border-bottom: 1px solid #555; }
-    button { padding: 10px; font-size: 16px; cursor: pointer; }
+    body { 
+        font-family: "Garamond", serif; 
+        background: url('dnd-background.jpg') no-repeat center center fixed; 
+        background-size: cover; 
+        color: white; 
+        text-align: center; 
+        margin: 0; 
+    }
+    header { 
+        background: rgba(0, 0, 0, 0.7); 
+        padding: 20px; 
+    }
+    nav { 
+        display: flex; 
+        justify-content: center; 
+        gap: 10px; 
+    }
+    .toggle { 
+        background: #4c2f27; 
+        color: white; 
+        border: none; 
+        padding: 10px 20px; 
+        cursor: pointer; 
+        font-size: 16px; 
+    }
+    .toggle:hover {
+        background: #7a4935;
+    }
+    .content {
+        display: none;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        margin: 10px;
+        border-radius: 10px;
+    }
+    .hidden { display: none; }
 </style>
 
 <!-- script.js -->
 <script>
+    document.querySelectorAll('.toggle').forEach(button => {
+        button.addEventListener('click', () => {
+            const target = document.getElementById(button.dataset.target);
+            target.classList.toggle('hidden');
+        });
+    });
+
     function rollDice() {
         const dice = document.getElementById("dice").value;
         const result = Math.floor(Math.random() * dice) + 1;
